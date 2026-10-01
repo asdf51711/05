@@ -2,23 +2,27 @@
 
 int main(void)
 {
-    int num1, num2;
-    char op;
-    int result;
+    int answer = 59;
+    int guess;
+    int count = 0;
 
-    printf("Enter calculation: ");
-    scanf("%d %c %d", &num1, &op, &num2);
+    do
+    {
+        printf("Enter your guess: ");
+        scanf("%d", &guess);
 
-    if (op == '+')
-        result = num1 + num2;
-    else if (op == '-')
-        result = num1 - num2;
-    else if (op == '*')
-        result = num1 * num2;
-    else if (op == '/')
-        result = num1 / num2;
+        count++;
 
-    printf("Result: %d\n", result);
+        if (guess > answer)
+            printf("Too high!\n");
+        else if (guess < answer)
+            printf("Too low!\n");
+        else
+            printf("Correct!\n");
+
+    } while (guess != answer);
+
+    printf("Attempts: %d\n", count);
 
     return 0;
 }
