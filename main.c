@@ -2,17 +2,18 @@
 
 int main(void)
 {
-    int num;
+    int c;
+    int num = 0;
 
-    printf("Enter an integer: ");
-    scanf("%d", &num);
+    printf("Enter a string: ");
 
-    if (num > 0)
-        printf("Positive\n");
-    else if (num < 0)
-        printf("Negative\n");
-    else
-        printf("Zero\n");
+    while ((c = getchar()) != '\n')
+    {
+        if (c >= '0' && c <= '9')
+            num++;
+    }
+
+    printf("Number of digits: %d\n", num);
 
     return 0;
 }
